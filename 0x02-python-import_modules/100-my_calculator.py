@@ -18,7 +18,7 @@ if __name__ == "__main__":
     elif operator not in math_ops:
         print("Unknown operator. Available operators: +, -, * and /")
         sys.exit(1)
-    else:
+    elif int(argc) == 3:
         if operator == "+":
             result = add(a, b)
         elif operator == "-":
