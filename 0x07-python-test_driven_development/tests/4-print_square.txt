@@ -1,0 +1,56 @@
+===============================
+ How to Use 4-print_square.txt
+===============================
+
+This library has one function called
+``print_square()``.
+
+Prints a Square
+==========================
+
+``print_square()`` prints a square with the character #.
+
+::
+
+	# importing function from module
+	>>> print_square = __import__("4-print_square").print_square
+
+	# printing a normal square with a positive size
+	>>> print_square(5)
+	#####
+	#####
+	#####
+	#####
+	#####
+
+
+Exceptions
+===========
+Because size ia also defined on data types other than integers,
+``print_square()`` works as below
+
+::
+
+	# When size is not an int
+	>>> print_square("six")
+	Traceback (most recent call last):
+	...
+	TypeError: size must be an integer
+
+     	# When size is less than 0
+     	>>> print_square(-18)
+	Traceback (most recent call last):
+	...
+	ValueError: size must be >= 0
+
+	# When size is float and is less than 0
+	>>> print_square(4.2)
+	Traceback (most recent call last):
+	...
+	TypeError: size must be an integer
+
+	# When size is float and is less than 0
+	>>> print_square(-8.7)
+	Traceback (most recent call last):
+	...
+	TypeError: size must be an integer
