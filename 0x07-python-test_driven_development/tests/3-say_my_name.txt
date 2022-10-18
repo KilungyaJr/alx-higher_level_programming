@@ -5,7 +5,7 @@
 This library has one function called
 ``say_my_name()``.
 
-Matrix Division Operations
+Print First and Last Names
 ==========================
 
 ``say_my_name()`` prints first and last names in a formatted output.
