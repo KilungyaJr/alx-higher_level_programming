@@ -1,0 +1,68 @@
+===============================
+ How to Use 100-matrix_mul.py
+===============================
+
+This library has one function called
+``matrix_mul()``.
+
+Matrix Multiplication Operations
+==========================
+
+``matrix_mul()`` returns a new matrix that is a multiplication of all its elements in two matrices.
+
+::
+
+	# importing function from module
+	>>> matrix_mul = __import__("100-matrix_mul").matrix_mul
+
+	# Multiplying a 2 x 2 matrix with a 2x2 matrix
+	>>> matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]])
+	[[7, 10], [15, 22]]
+
+	# Multiplying a 3x3 matrix with a 3x3 matrix with int and float elements
+	>>> matrix_mul([[1.0, 2.0, -3], [4, -5, 6.4], [7, 8.5, 9.2]], [[10, 11, -12], [54, 32, -9.6], [45, 23, 33]])
+	[[-17.0, 6.0, -130.2], [58.0, 31.200000000000017, 211.20000000000002], [943.0, 560.6, 137.99999999999997]]
+
+
+Exceptions
+===========
+Because m_a and m_b must be an list of lists of integers or floats,
+``matrix_mul()`` works as below
+
+::
+
+	# When m_a is empty
+	>>> matrix_mul([[]], [[9, 4, 5]])
+	Traceback (most recent call last):
+	...
+	ValueError: m_a can't be empty
+
+	# When one element of those list of lists is not an integer or a float
+	>>> matrix_mul([[1, 2.4, 3.87, 8]], [[4, 5, -6, "baba"]])
+	Traceback (most recent call last):
+	...
+	TypeError: m_b should contain only integers or floats
+
+	# When rows have different sizes
+	>>> matrix_mul([[1, 2, 3], [8, -9, -43]], [[4, 5, 6], [76, 8]])
+	Traceback (most recent call last):
+	...
+	TypeError: each row of m_b must be of the same size
+
+	# Multiplying a 2x3 matrix with a 2x3 matrix with int and float elements
+	>>> matrix_mul([[1.0, 2.0, -3], [4, -5, 6.4]], [[7, 8.5, -9.2], [-10, 11, 12]])
+	Traceback (most recent call last):
+	...
+	ValueError: m_a and m_b can't be multiplied
+
+	# if m_a or m_b is not a list
+	>>> matrix_mul({1, 2, 3,}, [8, -9, -43])
+	Traceback (most recent call last):
+	...
+	TypeError: m_a must be a list
+
+	# if m_a or m_b is not a list of lists:
+	>>> matrix_mul([[1, 2, 3], [8, -9, -43]], [[4, 5, 6], 76, -4, 8])
+	Traceback (most recent call last):
+	...
+	TypeError: m_b must be a list of lists
