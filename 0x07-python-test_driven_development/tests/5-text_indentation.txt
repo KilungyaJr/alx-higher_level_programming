@@ -1,0 +1,55 @@
+===============================
+ How to Use 5-text_indentation.py
+===============================
+
+This library has one function called
+``text_indentation()``.
+
+Prints Text with Added Lines
+==========================
+
+``text_indentation()`` a text with 2 new lines after each of these characters: ., ? and :.
+
+::
+
+	# importing function from module
+	>>> text_indentation = __import__("5-text_indentation").text_indentation
+
+	# printing text with ., ?, and : chars
+	>>> text_indentation("""Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quonam modo? Utrum igitur tibi litteram videor an totas paginas commovere? Non autem hoc: igitur ne illud quidem.""")
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+	<BLANKLINE>
+	Quonam modo?
+	<BLANKLINE>
+	Utrum igitur tibi litteram videor an totas paginas commovere?
+	<BLANKLINE>
+	Non autem hoc:
+	<BLANKLINE>
+	igitur ne illud quidem.
+	<BLANKLINE>
+
+
+Exceptions
+===========
+Because a user can input text that is not a string,
+``text_indentation()`` works as below
+
+::
+
+	# When text is not a string
+	>>> text_indentation({"Ruto": 5})
+	Traceback (most recent call last):
+	...
+	TypeError: text must be a string
+
+	# When text is not a string
+	>>> text_indentation(861538379437583846)
+	Traceback (most recent call last):
+	...
+	TypeError: text must be a string
+
+	# When text is not a string - a bool
+	>>> text_indentation(False)
+	Traceback (most recent call last):
+	...
+	TypeError: text must be a string
