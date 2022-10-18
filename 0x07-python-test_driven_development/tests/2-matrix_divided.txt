@@ -1,0 +1,70 @@
+===============================
+ How to Use 2-matrix_divided.py
+===============================
+
+This library has one function called
+``matrix_divided()``.
+
+Matrix Division Operations
+==========================
+
+``matrix_divided()`` returns a new matrix that is a division of all its elements,
+rounded to 2 decimal places.
+
+::
+
+	# importing function from module
+	>>> matrix_divided = __import__("2-matrix_divided").matrix_divided
+
+	# Dividing a 2 x 3 matrix positive values
+	>>> matrix = [[1, 2, 3], [4, 5, 6]]
+	>>> matrix_divided(matrix, 3)
+	[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+	# Dividing a matrix with both int and float data types, positive and negative
+	>>> matrix = [[1, 2.4, 3.87, -4.3], [4, 5, -6, -7.6], [-2, -6, 6.6, 5]]
+	>>> matrix_divided(matrix, 4)
+	[[0.25, 0.6, 0.97, -1.07], [1.0, 1.25, -1.5, -1.9], [-0.5, -1.5, 1.65, 1.25]]
+
+
+Exceptions
+===========
+Because matrix and div are also defined on data types other than numbers,
+``matrix_divided()`` works just as well as below
+
+::
+
+	# When the division element is not an integer or float
+	>>> matrix = [[1, 2.4, 3.87, "kasee"], [4, 5, -6, "baba"], [-2, -6, True, 5]]
+	>>> matrix_divided(matrix, 7)
+	Traceback (most recent call last):
+	...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+     	# Dividing an empty matrix
+     	>>> matrix = [[]]
+	>>> matrix_divided(matrix, 5)
+	Traceback (most recent call last):
+	...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+	# Dividing a matrix with different row lengths
+	>>> matrix = [[1, 2, 3, 8, -9, -43], [4, 5, 6, 76, -4, 8], [-2, -6, 66, 5]]
+	>>> matrix_divided(matrix, 4)
+	Traceback (most recent call last):
+	...
+	TypeError: Each row of the matrix must have the same size
+
+	# When the division element is not an integer or float
+	>>> matrix = [[1, 2.4, 3.87, -4.3], [4, 5, -6, -7.6], [-2, -6, 6.6, 5]]
+	>>> matrix_divided(matrix, "ten")
+	Traceback (most recent call last):
+	...
+	TypeError: div must be a number
+
+	# When the division element is 0 (when div=0)
+	>>> matrix = [[1, 2.4, 3.87, -4.3], [4, 5, -6, -7.6], [-2, -6, 6.6, 5]]
+	>>> matrix_divided(matrix, 0)
+	Traceback (most recent call last):
+	...
+	ZeroDivisionError: division by zero
