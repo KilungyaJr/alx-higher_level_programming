@@ -1,5 +1,5 @@
 ===============================
- How to Use 4-print_square.txt
+ How to Use 4-print_square.py
 ===============================
 
 This library has one function called
