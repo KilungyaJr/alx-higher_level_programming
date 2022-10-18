@@ -1,0 +1,50 @@
+===============================
+ How to Use 3-say_my_name.py
+===============================
+
+This library has one function called
+``say_my_name()``.
+
+Matrix Division Operations
+==========================
+
+``say_my_name()`` prints first and last names in a formatted output.
+
+::
+
+	# importing function from module
+	>>> say_my_name = __import__("3-say_my_name").say_my_name
+
+	# printing first and last names - strings
+	>>> say_my_name("Sir", "Kilungya")
+	My name is Sir Kilungya
+
+	# when arguments is one
+	>>> say_my_name("Kimeu") #doctest: +REPORT_NDIFF
+	My name is Kimeu 
+
+
+Exceptions
+===========
+Because first_name and last_name are also defined on data types other than strings,
+``say_my_name()`` works as below
+
+::
+
+	# When first name is not a string - an int
+	>>> say_my_name(45, "Shakespeare")
+	Traceback (most recent call last):
+	...
+	TypeError: first_name must be a string
+
+     	# When last name is not a string - a bool
+     	>>> say_my_name("Faith", True)
+	Traceback (most recent call last):
+	...
+	TypeError: last_name must be a string
+
+	# When an undeclared variable is passed
+	>>> say_my_name("FirstName", surname)
+	Traceback (most recent call last):
+	...
+	NameError: name 'surname' is not defined
