@@ -1,12 +1,14 @@
 #!/usr/bin/python3
-"""Module add_integer"""
+"""
+Module add_integer
+Adds two integers through main func
+
+"""
 
 
 def add_integer(a, b=98):
-    """adds two integers
-
-    Raises:
-    TypeError: if a and b are not integers or floats
+    """returns the sum of two integers
+    Raises:TypeError: if a and b are not integers or floats
     """
     if type(a) is not float and type(a) is not int:
         raise TypeError("a must be an integer")
