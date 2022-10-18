@@ -1,0 +1,71 @@
+===============================
+ How to Use 101-lazy_matrix_mul.py
+===============================
+
+This library has one function called
+``lazy_matrix_mul()``.
+
+Matrix Multiplication using NumPy
+==========================
+
+``lazy_matrix_mul()`` returns a new matrix that is a multiplication of all its elements in two matrices.
+
+::
+
+	# importing function from module
+	>>> lazy_matrix_mul = __import__("101-lazy_matrix_mul").lazy_matrix_mul
+
+	# Multiplying a 2 x 2 matrix with a 2x2 matrix
+	>>> lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]])
+	array([[ 7, 10],
+	       [15, 22]])
+
+	# Multiplying a 3x3 matrix with a 3x3 matrix with int and float elements
+	>>> lazy_matrix_mul([[1.0, 2.0, -3], [4, -5, 6.4], [7, 8.5, 9.2]], [[10, 11, -12], [54, 32, -9.6], [45, 23, 33]])
+	array([[ -17. ,    6. , -130.2],
+               [  58. ,   31.2,  211.2],
+               [ 943. ,  560.6,  138. ]])
+
+
+Exceptions
+===========
+Because m_a and m_b must be an list of lists of integers or floats,
+``matrix_mul()`` works as below
+
+::
+
+	# When m_a is empty
+	>>> lazy_matrix_mul([[]], [[9, 4, 5]])
+	Traceback (most recent call last):
+	...
+	ValueError: shapes (1,0) and (1,3) not aligned: 0 (dim 1) != 1 (dim 0)
+
+	# When one element of those list of lists is not an integer or a float
+	>>> lazy_matrix_mul([[1, 2.4, 3.87, 8]], [[4, 5, -6, "baba"]])
+	Traceback (most recent call last):
+	...
+	ValueError: shapes (1,4) and (1,4) not aligned: 4 (dim 1) != 1 (dim 0)
+
+	# When rows have different sizes
+	>>> lazy_matrix_mul([[1, 2, 3], [8, -9, -43]], [[4, 5, 6], [76, 8]])
+	Traceback (most recent call last):
+	...
+	ValueError: setting an array element with a sequence.
+
+	# Multiplying a 2x3 matrix with a 2x3 matrix with int and float elements
+	>>> lazy_matrix_mul([[1.0, 2.0, -3], [4, -5, 6.4]], [[7, 8.5, -9.2], [-10, 11, 12]])
+	Traceback (most recent call last):
+	...
+	ValueError: shapes (2,3) and (2,3) not aligned: 3 (dim 1) != 2 (dim 0)
+
+	# if m_a or m_b is not a list
+	>>> lazy_matrix_mul({1, 2, 3,}, [8, -9, -43])
+	Traceback (most recent call last):
+	...
+	TypeError: Object arrays are not currently supported
+
+	# if m_a or m_b is not a list of lists:
+	>>> lazy_matrix_mul([[1, 2, 3], [8, -9, -43]], [[4, 5, 6], 76, -4, 8])
+	Traceback (most recent call last):
+	...
+	ValueError: setting an array element with a sequence.
