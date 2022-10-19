@@ -60,3 +60,6 @@ class TestMaxInteger(unittest.TestCase):
         string = "zidane"
         result = max_integer(string)
         self.assertEqual(result, "z")
+
+if __name__ == '__main__':
+    unittest.main()
