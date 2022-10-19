@@ -25,7 +25,7 @@ class TestMaxInteger(unittest.TestCase):
         """tests an empty list"""
         empty_list = []
         result = max_integer(empty_list)
-        self.assertEqual(None)
+        self.assertEqual(result, None)
 
     def one_item_list(self):
         """tests a list with one item"""
@@ -45,17 +45,11 @@ class TestMaxInteger(unittest.TestCase):
         result = max_integer(char_list)
         self.assertEqual(result, "y")
 
-    def string_list_test(self):
-        """tests a list of strings"""
-        string_list = ["home", "none", "list", "find", "risk"]
-        result = max_integer(string_list)
-        self.assertEqual(result, "risk")
-
     def ints_and_floats_test(self):
         """tests a list of float and integer"""
-        int_float_list = [-5, 4.5, 7, 7.13, 6.89]
+        int_float_list = [-5, 4.5, 7, 8.13, 6.89]
         result = max_integer(int_float_list)
-        self.assertEqual(result, 7.13)
+        self.assertEqual(result, 8.13)
 
     def string_test(self):
         """test a string"""
