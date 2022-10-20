@@ -26,6 +26,11 @@ rounded to 2 decimal places.
 	>>> matrix_divided(matrix, 4)
 	[[0.25, 0.6, 0.97, -1.07], [1.0, 1.25, -1.5, -1.9], [-0.5, -1.5, 1.65, 1.25]]
 
+	# When matrix= list of lists of integers / div= float(inf) => all values == 0.0
+	>>> matrix = [[1, 2, 3], [4, 5, 6]]
+	>>> matrix_divided(matrix, float('inf'))
+	[[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
+
 
 Exceptions
 ===========
@@ -68,3 +73,17 @@ Because matrix and div are also defined on data types other than numbers,
 	Traceback (most recent call last):
 	...
 	ZeroDivisionError: division by zero
+
+	# When test is missing one argument
+	>>> matrix = [[1, 2, 3], [4, 5, 6]]
+	>>> matrix_divided(matrix)
+	Traceback (most recent call last):
+	...
+	TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+	# When test is missing 2 arguments
+	>>> matrix = [[1, 2, 3], [4, 5, 6]]
+	>>> matrix_divided()
+	Traceback (most recent call last):
+	...
+	TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
