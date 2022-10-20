@@ -63,3 +63,9 @@ string, empty, variable, boolean
 	Traceback (most recent call last):
 	...
 	ValueError: cannot convert float NaN to integer
+
+	>>> import math
+	>>> add_integer((float(math.factorial(171))), 78)
+	Traceback (most recent call last):
+	...
+	OverflowError: int too large to convert to float
