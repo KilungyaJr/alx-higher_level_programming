@@ -69,3 +69,15 @@ Because m_a and m_b must be an list of lists of integers or floats,
 	Traceback (most recent call last):
 	...
 	ValueError: setting an array element with a sequence.
+
+	# missing one argument
+	>>> lazy_matrix_mul([[1, 2, 3], [8, -9, -43]])
+	Traceback (most recent call last):
+	...
+	TypeError: lazy_matrix_mul() missing 1 required positional argument: 'm_b'
+
+	# missing two arguments
+	>>> lazy_matrix_mul()
+	Traceback (most recent call last):
+	...
+	TypeError: lazy_matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
