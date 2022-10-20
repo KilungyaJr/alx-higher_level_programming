@@ -37,11 +37,35 @@ Because m_a and m_b must be an list of lists of integers or floats,
 	...
 	ValueError: m_a can't be empty
 
+	# When m_b is empty
+	>>> matrix_mul([[65, 78, 88]], [[]])
+	Traceback (most recent call last):
+	...
+	ValueError: m_b can't be empty
+
+	# When one element of those list of lists is not an integer or a float
+	>>> matrix_mul([[1, 2.4, "uhuru", 8]], [[4, 5, -6, 20]])
+	Traceback (most recent call last):
+	...
+	TypeError: m_a should contain only integers or floats
+
 	# When one element of those list of lists is not an integer or a float
 	>>> matrix_mul([[1, 2.4, 3.87, 8]], [[4, 5, -6, "baba"]])
 	Traceback (most recent call last):
 	...
 	TypeError: m_b should contain only integers or floats
+
+	# When rows have different sizes
+	>>> matrix_mul([[1, 2, 3], [-9, -43]], [[4, 5, 6], [76, 8, 67]])
+	Traceback (most recent call last):
+	...
+	TypeError: each row of m_a must be of the same size
+
+	# When rows have different sizes
+	>>> matrix_mul([[1, 2, 3], [-9, -43], [6, 5, 6, 8]], [[4, 5, 6], [54, 66, 87], [76, 8, 67]])
+	Traceback (most recent call last):
+	...
+	TypeError: each row of m_a must be of the same size
 
 	# When rows have different sizes
 	>>> matrix_mul([[1, 2, 3], [8, -9, -43]], [[4, 5, 6], [76, 8]])
@@ -66,3 +90,15 @@ Because m_a and m_b must be an list of lists of integers or floats,
 	Traceback (most recent call last):
 	...
 	TypeError: m_b must be a list of lists
+
+	# missing one argument
+	>>> matrix_mul([[1, 2, 3], [8, -9, -43]])
+	Traceback (most recent call last):
+	...
+	TypeError: matrix_mul() missing 1 required positional argument: 'm_b'
+
+	# missing two arguments
+	>>> matrix_mul()
+	Traceback (most recent call last):
+	...
+	TypeError: matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
