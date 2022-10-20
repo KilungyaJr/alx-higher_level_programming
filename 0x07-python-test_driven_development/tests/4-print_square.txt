@@ -23,6 +23,9 @@ Prints a Square
 	#####
 	#####
 
+	>>> print_square(0)
+	
+
 
 Exceptions
 ===========
