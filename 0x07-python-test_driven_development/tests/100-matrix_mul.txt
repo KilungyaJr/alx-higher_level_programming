@@ -85,6 +85,18 @@ Because m_a and m_b must be an list of lists of integers or floats,
 	...
 	TypeError: m_a must be a list
 
+	# if m_a or m_b is not a list
+	>>> matrix_mul([1, 2, 3,], {8, -9, -43})
+	Traceback (most recent call last):
+	...
+	TypeError: m_b must be a list
+
+	# if m_a or m_b is not a list of lists:
+	>>> matrix_mul([[1, 2, 3], 8, -9, -43], [[4, 5, 6], [76, -4, 8]])
+	Traceback (most recent call last):
+	...
+	TypeError: m_a must be a list of lists
+
 	# if m_a or m_b is not a list of lists:
 	>>> matrix_mul([[1, 2, 3], [8, -9, -43]], [[4, 5, 6], 76, -4, 8])
 	Traceback (most recent call last):
