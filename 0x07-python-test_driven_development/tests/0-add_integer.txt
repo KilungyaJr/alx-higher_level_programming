@@ -58,3 +58,8 @@ string, empty, variable, boolean
 	Traceback (most recent call last):
 	...
 	TypeError: a must be an integer
+
+	>>> add_integer(float('nan'), 78)
+	Traceback (most recent call last):
+	...
+	ValueError: cannot convert float NaN to integer
