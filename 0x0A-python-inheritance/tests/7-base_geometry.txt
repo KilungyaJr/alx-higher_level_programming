@@ -17,7 +17,11 @@ Integer Validation
 
 	# validating an integer that is > 0
 	>>> bg = BaseGeometry()
+
 	>>> bg.integer_validator("my_int", 12)
+
+	>>> bg.integer_validator("width", 89)
+
 
 Exceptions
 ===========
@@ -57,7 +61,30 @@ Because ,
 	ValueError: distance must be greater than 0
 
 	# missing two arguments
-	bg.integer_validator()
+	>>> bg.integer_validator()
 	Traceback (most recent call last):
 	...
 	TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+	# input as float nan
+	>>> bg.integer_validator("NaN", float('nan'))
+    	Traceback (most recent call last):
+	...
+    	TypeError: NaN must be an integer
+
+	# value as a bool
+	>>> bg.integer_validator("age", True)
+    	Traceback (most recent call last):
+	...
+    	TypeError: age must be an integer
+
+	# more value not int testcases
+	>>> bg.integer_validator("age", {3, 4})
+    	Traceback (most recent call last):
+	...
+    	TypeError: age must be an integer
+
+    	>>> bg.integer_validator("age", None)
+    	Traceback (most recent call last):
+	...
+    	TypeError: age must be an integer
