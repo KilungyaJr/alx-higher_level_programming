@@ -18,6 +18,11 @@ class BaseGeometry():
             raise ValueError("{:s} must be greater than 0".format(name))
 
 
+"""
+Defines a class Rectangle
+"""
+
+
 class Rectangle(BaseGeometry):
     """represents a rectangle that inherits from BaseGeometry class
 
@@ -25,7 +30,12 @@ class Rectangle(BaseGeometry):
     width, height - all private
     """
     def __init__(self, width, height):
-        """initializes data"""
+        """initializes data
+
+        Args:
+        width: width of rectangle
+        height: height of rectangle
+        """
         self.integer_validator("width", width)
         self.integer_validator("height", height)
         self.__width = width
