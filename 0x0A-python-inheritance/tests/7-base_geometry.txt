@@ -1,0 +1,63 @@
+===============================
+ How to Use 7-base_geometry.py
+===============================
+
+This library has a class called
+``BaseGeometry()``.
+
+Integer Validation
+==========================
+
+``BaseGeometry()`` validated value
+
+::
+
+	# importing function from module
+	>>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
+
+	# validating an integer that is > 0
+	>>> bg = BaseGeometry()
+	>>> bg.integer_validator("my_int", 12)
+
+Exceptions
+===========
+Because ,
+``BaseGeometry()`` works as below
+
+::
+
+	# when value is not an integer
+	>>> bg.integer_validator("name", "John")
+	Traceback (most recent call last):
+	...
+	TypeError: name must be an integer
+
+	# when value is == zero
+	>>> bg.integer_validator("age", 0)
+	Traceback (most recent call last):
+	...
+	ValueError: age must be greater than 0
+
+	# when value is < zero
+	>>> bg.integer_validator("distance", -4)
+	Traceback (most recent call last):
+	...
+	ValueError: distance must be greater than 0
+
+	# missing one argument
+	>>> bg.integer_validator("distance")
+	Traceback (most recent call last):
+	...
+	TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+	# when value is less than zero
+	>>> bg.integer_validator("distance", -4)
+	Traceback (most recent call last):
+	...
+	ValueError: distance must be greater than 0
+
+	# missing two arguments
+	bg.integer_validator()
+	Traceback (most recent call last):
+	...
+	TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
