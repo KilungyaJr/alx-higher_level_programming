@@ -24,7 +24,7 @@ Defines a class Rectangle
 
 
 class Rectangle(BaseGeometry):
-    """represents a rectangle that inherits from BaseGeometry class
+    """represents a rectangle that inherits BaseGeometry class
 
     Attributes:
     width, height - all private
