@@ -66,6 +66,12 @@ Because ,
 	...
 	TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
+	# too many arguments
+	>>> bg.integer_validator("integer", 1, 2)
+	Traceback (most recent call last):
+        ...
+	TypeError: integer_validator() takes 3 positional arguments but 4 were given
+
 	# input as float nan
 	>>> bg.integer_validator("NaN", float('nan'))
     	Traceback (most recent call last):
@@ -89,8 +95,34 @@ Because ,
 	...
     	TypeError: age must be an integer
 
+	>>> bg.integer_validator("tuple", (1, 2))
+        Traceback (most recent call last):
+        ...
+        TypeError: tuple must be an integer
+
+	>>> bg.integer_validator("list", [1, 2, 3])
+	Traceback (most recent call last):
+        ...
+        TypeError: list must be an integer
+
+	>>> bg.integer_validator("dict", {"key": "value"})
+        Traceback (most recent call last):
+        ...
+        TypeError: dict must be an integer
+
+	>>> bg.integer_validator("set", {"hello", "world"})
+        Traceback (most recent call last):
+        ...
+        TypeError: set must be an integer
+
 	# area public instance test
 	>>> bg.area()
     	Traceback (most recent call last):
 	...
     	Exception: area() is not implemented
+
+	# too many arguments for area
+	>>> bg.area(1)
+	Traceback (most recent call last):
+        ...
+	TypeError: area() takes 1 positional argument but 2 were given
