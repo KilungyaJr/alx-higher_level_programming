@@ -88,3 +88,9 @@ Because ,
     	Traceback (most recent call last):
 	...
     	TypeError: age must be an integer
+
+	# area public instance test
+	>>> bg.area()
+    	Traceback (most recent call last):
+	...
+    	Exception: area() is not implemented
