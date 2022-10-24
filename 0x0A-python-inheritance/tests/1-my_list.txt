@@ -32,9 +32,19 @@ Print List - Ascending
 	>>> my_list.print_sorted()
 	[4, 5, 7, 9]
 
-	# checking documentation - docstrings
-	>>> m_doc = __import__("1-my_list").__doc__
-	>>> print(len(m_doc) > 0)
+	# checking documentation - module docstrings
+	>>> mo_doc = __import__("1-my_list").__doc__
+	>>> print(len(mo_doc) > 1)
+	True
+
+	# checking documentation - class docstrings
+	>>> c_doc = __import__("1-my_list").MyList.__doc__
+	>>> print(len(c_doc) > 1)
+	True
+
+	# checking documentation - method docstrings
+	>>> me_doc = __import__("1-my_list").MyList.print_sorted.__doc__
+	>>> print(len(me_doc) > 1)
 	True
 
 	# Checking that MyList inherits from list
