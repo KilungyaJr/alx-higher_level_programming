@@ -3,6 +3,7 @@
 Defines a class Square
 """
 
+BaseGeometry = __import__('7-base_geometry').BaseGeometry
 Rectangle = __import__('9-rectangle').Rectangle
 
 
@@ -19,6 +20,7 @@ class Square(Rectangle):
         size: size of a side of a square
         """
         self.integer_validator("size", size)
+        super().__init__(size, size)
         self.__size = size
 
     def area(self):
@@ -26,5 +28,5 @@ class Square(Rectangle):
         return self.__size ** 2
 
     def __str__(self):
-        """prints square description"""
-        return str("[Rectangle] {:d}/{:d}".format(self.__size, self.__size))
+        """invokes the superclass"""
+        return super().__str__()
