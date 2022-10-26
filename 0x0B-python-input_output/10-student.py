@@ -29,4 +29,4 @@ class Student():
                     if i in self.__dict__:
                         my_dict.update({i: self.__dict__[i]})
                 return my_dict
-            return self.__dict__.copy()
+            return self.__dict__
