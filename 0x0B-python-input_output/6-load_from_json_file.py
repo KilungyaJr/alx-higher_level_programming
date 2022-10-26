@@ -10,4 +10,4 @@ def load_from_json_file(filename):
     with open(filename, encoding="utf-8") as my_file:
         read_data = my_file.read()
         return json.loads(read_data)
-    #this single line works too - return json.load(my_file)
+    # this single line works too - return json.load(my_file)
