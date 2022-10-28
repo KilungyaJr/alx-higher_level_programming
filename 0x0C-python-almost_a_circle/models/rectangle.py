@@ -113,3 +113,21 @@ class Rectangle(Base):
     def __str__(self):
         """prints in formatted output"""
         return "[{}] ({}) {}/{} - {}/{}".format(self.__class__.__name__, self.id, self.x, self.y, self.width, self.height)
+
+    def update(self, *args):
+        """assigns an argument to each attribute"""
+        if args or len(args) != 0:
+            for i in range(len(args)):
+                if i == 0:
+                    if args[i] is None:
+                        self.__init__(self.width, self.height, self.x, self.y)
+                    else:
+                        self.id = args[i]
+                if i == 1:
+                    self.width = args[i]
+                if i == 2:
+                    self.height = args[i]
+                if i == 3:
+                    self.x = args[i]
+                if i == 4:
+                    self.y = args[i]
