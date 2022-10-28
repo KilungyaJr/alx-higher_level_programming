@@ -16,9 +16,25 @@ class Rectangle(Base):
     """
     def __init__(self, width, height, x=0, y=0, id=None):
         """class constructor - initializes the data"""
+        if type(width) is not int:
+            raise TypeError("must be an integer")
+        if width <= 0:
+            raise ValueError("must be > 0")
         self.width = width
+        if type(height) is not int:
+            raise TypeError("must be an integer")
+        if height <= 0:
+            raise ValueError("must be > 0")
         self.height = height
+        if type(x) is not int:
+            raise TypeError("must be an integer")
+        if x < 0:
+            raise ValueError("must be >= 0")
         self.x = x
+        if type(y) is not int:
+            raise TypeError("must be an integer")
+        if y < 0:
+            raise ValueError("must be >= 0")
         self.y = y
         super().__init__(id)
 
@@ -30,6 +46,10 @@ class Rectangle(Base):
     @width.setter
     def width(self, value):
         """setter for width"""
+        if type(value) is not int:
+            raise TypeError("must be an integer")
+        if value <= 0:
+            raise ValueError("must be > 0")
         self.__width = value
 
     @property
@@ -40,6 +60,10 @@ class Rectangle(Base):
     @height.setter
     def height(self, value):
         """setter for height"""
+        if type(value) is not int:
+            raise TypeError("must be an integer")
+        if value <= 0:
+            raise ValueError("must be > 0")
         self.__height = value
 
     @property
@@ -50,6 +74,10 @@ class Rectangle(Base):
     @x.setter
     def x(self, value):
         """setter for x"""
+        if type(value) is not int:
+            raise TypeError("must be an integer")
+        if value < 0:
+            raise ValueError("must be >= 0")
         self.__x = value
 
     @property
@@ -60,4 +88,8 @@ class Rectangle(Base):
     @y.setter
     def y(self, value):
         """setter for y"""
+        if type(value) is not int:
+            raise TypeError("must be an integer")
+        if value < 0:
+            raise ValueError("must be >= 0")
         self.__y = value
