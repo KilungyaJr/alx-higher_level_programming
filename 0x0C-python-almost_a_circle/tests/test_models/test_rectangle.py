@@ -1,5 +1,5 @@
 #!/usr/bin/python3
 """
-Unittest for rectangle class([..])
+Unittests for rectangle class([..])
 """
 import unittest

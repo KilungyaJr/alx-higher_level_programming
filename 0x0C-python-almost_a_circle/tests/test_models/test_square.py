@@ -1,5 +1,5 @@
 #!/usr/bin/python3
 """
-Unittest for max_integer([..])
+Unittests for square class([..])
 """
 import unittest
