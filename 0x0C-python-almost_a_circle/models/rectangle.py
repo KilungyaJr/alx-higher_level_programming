@@ -96,15 +96,20 @@ class Rectangle(Base):
 
     def area(self):
         """returns the area value of the Rectangle instance"""
-        return self.__width * self.__height
+        return self.width * self.height
 
     def display(self):
         """prints in stdout the Rectangle instance with the character #"""
-        for i in range(self.__height):
-            for j in range(self.__width):
-                print("#", end="")
+        for i in range(self.__y):
+            print()
+        for i in range(self.height):
+            for j in range(self.width + self.x):
+                if j < self.x:
+                    print(" ", end="")
+                else:
+                    print("#", end="")
             print()
 
     def __str__(self):
         """prints in formatted output"""
-        return "[{}] ({}) {}/{} - {}/{}".format(self.__class__.__name__, self.id, self.__x, self.__y, self.__width, self.__height)
+        return "[{}] ({}) {}/{} - {}/{}".format(self.__class__.__name__, self.id, self.x, self.y, self.width, self.height)
