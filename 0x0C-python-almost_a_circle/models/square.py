@@ -13,7 +13,9 @@ class Square(Rectangle):
 
     def __str__(self):
         """prints in formatted output"""
-        return "[{}] ({}) {}/{} - {}".format(self.__class__.__name__, self.id, self.x, self.y, self.width)
+        return "[{}] ({}) {}/{} - {}".format(self.__class__.__name__,
+                                             self.id, self.x, self.y,
+                                             self.width)
 
     @property
     def size(self):
@@ -51,9 +53,10 @@ class Square(Rectangle):
                 for key, value in kwargs.items():
                     if key == "id":
                         if value is None:
-                            self.__init__(self.width, self.width, self.x, self.y)
+                            self.__init__(self.width, self.width,
+                                          self.x, self.y)
                         else:
-                            self.id =value
+                            self.id = value
                     if key == "size":
                         self.width = value
                         self.height = value

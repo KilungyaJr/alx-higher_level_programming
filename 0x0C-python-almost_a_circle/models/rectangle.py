@@ -112,7 +112,9 @@ class Rectangle(Base):
 
     def __str__(self):
         """prints in formatted output"""
-        return "[{}] ({}) {}/{} - {}/{}".format(self.__class__.__name__, self.id, self.x, self.y, self.width, self.height)
+        return "[{}] ({}) {}/{} - {}/{}".format(self.__class__.__name__,
+                                                self.id, self.x, self.y,
+                                                self.width, self.height)
 
     def update(self, *args, **kwargs):
         """assigns an argument to each attribute"""
@@ -136,9 +138,10 @@ class Rectangle(Base):
                 for key, value in kwargs.items():
                     if key == "id":
                         if value is None:
-                            self.__init__(self.width, self.height, self.x, self.y)
+                            self.__init__(self.width, self.height,
+                                          self.x, self.y)
                         else:
-                            self.id =value
+                            self.id = value
                     if key == "width":
                         self.width = value
                     if key == "height":
@@ -150,4 +153,5 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """returns the dictionary representation of a Rectangle"""
-        return {"id": self.id, "width": self.width, "height": self.height, "x": self.x, "y": self.y}
+        return {"id": self.id, "width": self.width,
+                "height": self.height, "x": self.x, "y": self.y}
