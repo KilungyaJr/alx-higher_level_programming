@@ -3,6 +3,7 @@
 Defines a class Base
 """
 import json
+import csv
 
 
 class Base:
