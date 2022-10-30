@@ -18,8 +18,8 @@ class Base:
         if id is not None:
             self.id = id
         else:
-           self.__class__.__nb_objects += 1
-           self.id = self.__class__.__nb_objects
+            self.__class__.__nb_objects += 1
+            self.id = self.__class__.__nb_objects
 
     @staticmethod
     def to_json_string(list_dictionaries):
@@ -69,3 +69,39 @@ class Base:
                 return [cls.create(**d) for d in list_ins]
         except IOError:
             return "[]"
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """write the CSV serialization of
+         a list of objects to a file"""
+        filename = cls.__name__ + ".csv"
+        if filename == "Rectangle.csv":
+            header = ["id", "width", "height", "x", "y"]
+        else:
+            header = ["id", "size", "x", "y"]
+
+        with open(filename, "w", newline="") as csv_file:
+            if list_objs == [] or list_objs is None:
+                csv_file.write("[]")
+            else:
+                writer = csv.DictWriter(csv_file, fieldnames=header)
+                for objs in list_objs:
+                    writer.writerow(objs.to_dictionary())
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Returns a list of classes instantiated
+        from a CSV file"""
+        filename = cls.__name__ + ".csv"
+        try:
+            with open(filename, "r") as csv_file:
+                if cls.__name__ == "Rectangle":
+                    header = ["id", "width", "height", "x", "y"]
+                else:
+                    header = ["id", "size", "x", "y"]
+                list_objs = csv.DictReader(csv_file, fieldnames=header)
+                list_dicts = [dict([k, int(v)] for k, v in d.items())
+                              for d in list_objs]
+                return [cls.create(**d) for d in list_dicts]
+        except IOError:
+            return []
