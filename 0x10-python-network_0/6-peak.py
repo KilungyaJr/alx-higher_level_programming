@@ -1,4 +1,4 @@
-;#!/usr/bin/python3
+#!/usr/bin/python3
 """
 finds a peak in a list of unsorted integers using a divide and conquer approach,
 which has a complexity of O(log(n))
