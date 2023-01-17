@@ -5,7 +5,6 @@ with a letter as a parameter using the package requests and sys
 """
 import requests
 import sys
-import json
 
 if __name__ == "__main__":
     if len(sys.argv) > 1:
@@ -13,9 +12,9 @@ if __name__ == "__main__":
     else:
         q = ""
     data = {'q': q}
-    response = requests.post("http://0.0.0.0:5000/search_user", data=data)
+    response = requests.post('http://0.0.0.0:5000/search_user', data=data)
     try:
-        json_res = json.loads(response.text)
+        json_res = response.json()
         if json_res:
             print("[{}] {}".format(json_res.get('id'), json_res.get('name')))
         else:
