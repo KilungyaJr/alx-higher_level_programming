@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 """
-finds a peak in a list of unsorted integers using a divide and conquer approach,
-which has a complexity of O(log(n))
+finds a peak in a list of unsorted integers using
+a divide and conquer approach which has a complexity of O(log(n))
 """
+
 
 def find_peak(list_of_integers):
     """
@@ -18,7 +19,8 @@ def find_peak(list_of_integers):
     if n < 3:
         return max(list_of_integers)
     mid = n // 2
-    if list_of_integers[mid - 1] < list_of_integers[mid] and list_of_integers[mid] > list_of_integers[mid + 1]:
+    if list_of_integers[mid - 1] < list_of_integers[mid] and
+    list_of_integers[mid] > list_of_integers[mid + 1]:
         return list_of_integers[mid]
     elif list_of_integers[mid - 1] < list_of_integers[mid]:
         return find_peak(list_of_integers[mid:])
